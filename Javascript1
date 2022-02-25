@@ -1,0 +1,295 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Javsacript.aspx.cs" Inherits="WebApplication1.Javsacript" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript">
+const { prototype } = require("./Scripts/jquery-3.4.1.slim");
+
+
+        // 1. Data Types Defined during Runtime
+        //var x = 10;
+        //alert(typeof x)
+
+        //x = "Sangam";
+        //alert(typeof x)
+
+
+
+        // 2. 3 Primitve Data Types in Javascript
+
+        //var x = 10;
+        //x = true;
+        //alert(typeof x);
+        //x = 10.4;
+        //alert(typeof x);
+
+
+
+
+        // 3.  Undefined
+
+        // var x;           /*Variables are declared but not assigned value*/
+        // alert(x);
+
+
+        // 4. NULL
+        // var x = null;    /*absence of data*/
+        //  alert(x)
+
+        /* 5. Lexical Scopes (Private/Global)*/
+
+        //var x = 10;
+        //alert(x);
+
+        //function F1() {
+        //    var x = 5;
+        //    alert(x);
+        //}
+
+        //F1();
+        //alert(x);
+
+
+        /*6. Auto Global Variables */
+
+
+        //function F1() {
+        //    x = 5;       // Auto Global variable
+
+        //}
+        //F1();
+        //alert(x)
+
+
+        //"use strict"  // Yo do not have variable which are created by Simply assigning of values
+        //var x;
+        //function F1() {
+        //    x = 5;
+
+        //}
+        //F1();
+        //alert(x)
+
+
+        /*7. Javascript Hoisting*/
+
+        //alert(x);
+        //var x = 10;  /*variable declaration are pulled up*/
+
+        /*8. Closures*/
+        //a) Maintain States B / w Function calls
+        //b) Access Private Variables
+
+        //function F1(val) {
+
+        //    var str = val;
+        //}
+
+
+        //F1("Shiv");
+        //F1("Ravi");
+
+
+        //function F1(val) {
+
+        //     var str = val;
+
+        //    var _getdata = function () {
+
+        //        return str;
+        //    }
+        //    return { getdata:_getdata };
+
+        //}
+
+        //var t = F1("Shiv");
+
+        /* alert(t.getdata);*/
+
+
+        //function F1(val) {
+
+        //     var str = val;
+
+        //    var _getdata = function () {
+
+        //        return str;
+        //    }
+        //    return { getdata:_getdata };
+
+        //}
+
+        //var t = F1("Shiv");
+        //var t1 = F1("Jay");
+        //alert(t.getdata());
+        //alert(t1.getdata());
+        //alert(t.getdata
+        
+
+
+        /*9.IIFE*/
+
+        //Anonymous Function
+
+
+        //(function () {  
+        //    alert("Hi")
+        //}());
+
+        /* 10. "this" is "windows"*/
+
+        //this.x = 10;
+
+        //alert(window.x);
+        //alert(this.x);
+        //alert(x);
+
+        //11. Classes are Function , 12. How to create classes and objects , 13.Create Properties and Methods 14. Make Use of Get & Set
+
+        //function Customer() {   
+        //    this.CustomerName = "Sangam";  // this is global object attached to window
+        //    this.CustomerCode = "1001"
+
+        //    this.getFullDetails = function () {
+        //        return this.CustomerCode + " " + this.CustomerName
+        //    }
+        //}
+
+        //var cust = new Customer();
+        //cust.CustomerCode = "1234";
+        //cust.CustomerName = "Sachin";
+        //alert(cust.getFullDetails());
+
+
+
+        //function Customer() {
+        //    var _CustomerName = "";
+        //    var _CustomerCode = " ";
+
+        //    this.setCustomerName = function (val) {
+        //        if (val.length == 0)
+        //            return;
+        //        _CustomerName = val;
+        //    }
+        //    this.setCustomerCode = function (val) {
+        //        if (val.length == 0)
+        //            return;
+        //        _CustomerCode = val;
+        //    }
+
+
+        //    this.getCustomerName = function () {
+        //        return _CustomerName;
+        //    }
+        //    this.getCustomerCode = function () {
+        //        return _CustomerCode;
+        //    }
+           
+        //}
+
+        
+        //var cust = new Customer();
+        //cust.setCustomerCode("1022");
+        //cust.setCustomerName("SANGAM");
+        //alert(cust.getCustomerCode());
+        //alert(cust.getCustomerName());
+
+
+        //function Customer() {
+        //    var _CustomerName = "";
+        //    var _CustomerCode = "";
+
+        //    this.CustomerName = function (val) {
+        //        if (val == undefined)
+        //            return _CustomerName;
+        //        _CustomerName = val;
+        //    }
+        //    this.CustomerCode = function (val) {
+        //        if (val == undefined)
+        //            return _CustomerCode;
+        //        _CustomerCode = val;
+        //    }
+
+        //    this.FullDetails = function () {
+        //        return this.CustomerCode() + ' ' + this.CustomerName()
+        //    }
+            
+        //}
+
+        //var cust = new Customer();
+        //cust.CustomerCode("1022");
+        //cust.CustomerName("SANGAM");
+        //alert(cust.CustomerName() + '' + cust.CustomerCode())
+        //alert(cust.FullDetails());
+        
+       
+       /* 15. Abstraction and Encapsulation*/
+
+        //function Customer() {
+        //    var FullName = 'sangam';
+
+        //    function Detail () {
+
+        //        alert(FullName);
+        //    }
+
+        //    function SetConnection() {
+        //        alert("Connection Set");
+
+        //    }
+        //    function SetHTTP() {
+        //        alert("HTTP Set");
+
+        //    }
+        //    this.Submit = function () {
+        //        debugger;
+        //        SetConnection();
+        //        SetHTTP();
+        //        Detail();
+        //    }
+        //}
+
+        //var cust = new Customer();
+        //cust.Submit();
+
+        /*16. Inheritance is done by using Prototype Object*/
+
+        function Customer(){
+            var CustomerName = '';
+
+            this.Submit = function () {
+                alert("Customer Submits Main" + this.CustomerName)
+            }
+        }
+
+        function CustomerChild() {
+            
+
+            this.Submit = function () {
+                alert("Customer Submits" + this.CustomerName)
+            }
+        }
+
+        CustomerChild.prototype = new Customer();  /*prototype object*/
+        var custchild = new CustomerChild();
+        custchild.CustomerName = "Sangam";
+        custchild.Submit();
+
+        var cust = new Customer();
+        cust.CustomerName = "Sangam";
+        cust.Submit();
+
+
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+    </form>
+</body>
+</html>
