@@ -1,0 +1,46 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CssWeb.aspx.cs" Inherits="WebApplication1.CssWeb" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="StyleSheet1.css" type="text/css" rel="stylesheet/less" />
+    <script src="Scripts/WebForms/less.js"></script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+             <input type="button" id="btn" value="Submit" />
+            <%--<input type="button" id="btn"  onclick="func1()" value="Submit" />--%>
+              
+
+       <script >
+            //on page load or in body connect event with behavior -unobtrusive javascript
+           function func1() {
+               alert("Hi")
+           }
+
+           var el = document.getElementById("btn");
+           el.onclick = func1;
+
+       </script>
+           
+            <div class="style1">
+                Some text
+            </div>
+            <br />
+            <div class="style2">
+                Some text
+            </div>
+
+            <br />
+
+
+
+        </div>
+    </form>
+</body>
+</html>
