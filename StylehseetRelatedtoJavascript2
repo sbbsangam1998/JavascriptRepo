@@ -1,0 +1,25 @@
+/*@mycolor : dodgerblue;
+
+.style1 {
+    background-color: @mycolor;
+    font-size: small;
+    
+}
+
+.style2 {
+    background-color: @mycolor;
+    font-size: large;
+}*/
+
+.Common{
+    background-color:springgreen;
+    font-size:xx-large;
+
+}
+
+.style1 {
+    .Common;
+}
+.style2 {
+    .Common;
+}
